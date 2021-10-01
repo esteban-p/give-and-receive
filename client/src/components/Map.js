@@ -20,7 +20,7 @@ export default function Map() {
     if (map.current) return; // initialize map only once
     
     if (!lng || !lat) {
-      console.log('loading'); // add a "loading spinner" later if possible
+      console.log('loading map...'); // add a "loading spinner" later if possible
     } else {
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
@@ -44,7 +44,12 @@ export default function Map() {
   return (
 
     <div>
-      <div ref={mapContainer} className="map-container" />
+      {lng && lat ? (
+        <div ref={mapContainer} className="map-container" />
+      ) : (
+        <h3>Map loading...</h3>
+      )}
+    
     </div>
 
   )

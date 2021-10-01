@@ -24,8 +24,8 @@ export default function Login(props) {
 					// user is correctly signed up in the backend
 					// add the user to the state of App.js
 					props.setUser(response);
-					// redirect to the home page
-					props.history.push('/home');
+					// redirect to the lovepieces page
+					props.history.push('/lovepieces');
 				}
 			})
 			.catch(err => console.log(err));

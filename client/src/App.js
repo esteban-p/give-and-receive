@@ -6,11 +6,13 @@ import Map from './components/Map';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
-import Home from './pages/Home';
+import Lovepieces from './pages/Lovepieces';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import About from './pages/About';
+import AddLovepiece from './components/AddLovepiece';
+import LovepieceDetails from './pages/LovepieceDetails';
 
 function App(props) {
 
@@ -28,7 +30,6 @@ function App(props) {
 
   return (
     <div className="App">
-      {/* <Map /> */}
 
       <Navbar user={user} setUser={addUser} />
 
@@ -46,7 +47,11 @@ function App(props) {
           render={props => <Login setUser={addUser} {...props} />}
         />
 
-        <ProtectedRoute exact path='/home' user={user} component={Home} />
+        <ProtectedRoute exact path='/lovepieces' user={user} component={Lovepieces} />
+
+        <ProtectedRoute exact path='/lovepieces/:id' user={user} component={LovepieceDetails} />
+
+        <ProtectedRoute exact path='/lovepieces/add' user={user} component={AddLovepiece} />
 
         <ProtectedRoute exact path='/profile' user={user} component={Profile} />
 

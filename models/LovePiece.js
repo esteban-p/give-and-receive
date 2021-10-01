@@ -6,6 +6,7 @@ const lovePieceSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
+  title: String,
   type: String,
   dateCreated: Date,
   stillValid: Boolean,

@@ -19,11 +19,15 @@ export default function Navbar(props) {
             <>
               <Link to="/about"><button>About G&R</button></Link>
 
+              <Link to="/lovepieces"><button>All lovepieces</button></Link>
+
               <Link to="/profile"><button>{props.user.username}</button></Link>
 
               <Link to="/" onClick={() => handleLogout()}>
                 <button>Logout</button>
               </Link>
+
+
             </>
       )}
     </nav>

@@ -10,26 +10,19 @@ import axios from 'axios';
 
 
 // get the logged in user from the backend and pass it to App.js
-// axios.get('/api/auth/loggedin')
-//   .then(response => {
-//     console.log('logged in user: ', response.data);
-//     const user = response.data;
-//     ReactDOM.render(
-//       <Router>
-//         <App user={user} />
-//       </Router>,
-//       document.getElementById('root')
-//     );
-//   })
+axios.get('/api/auth/loggedin')
+  .then(response => {
+    // console.log('logged in user from backend to app: ', response.data);
+    const user = response.data;
+    ReactDOM.render(
+      <Router>
+        <App user={user} />
+      </Router>,
+      document.getElementById('root')
+    );
+  })
 
 
-
-  ReactDOM.render(
-    <Router>
-      <App />
-    </Router>,
-    document.getElementById('root')
-  );
 
 
 
