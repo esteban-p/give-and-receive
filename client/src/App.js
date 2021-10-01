@@ -3,12 +3,14 @@ import { useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Map from './components/Map';
+import ProtectedRoute from './components/ProtectedRoute';
+import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Navbar from './components/Navbar';
-import ProtectedRoute from './components/ProtectedRoute';
+import Profile from './pages/Profile';
+import About from './pages/About';
 
 function App(props) {
 
@@ -43,14 +45,12 @@ function App(props) {
           exact path="/login"
           render={props => <Login setUser={addUser} {...props} />}
         />
-        
-        <ProtectedRoute
-          exact path='/home'
-          user={user}
-          component={Home}
-        />
 
+        <ProtectedRoute exact path='/home' user={user} component={Home} />
 
+        <ProtectedRoute exact path='/profile' user={user} component={Profile} />
+
+        <ProtectedRoute exact path='/about' user={user} component={About} />
 
       </Switch>
     </div>
@@ -62,9 +62,3 @@ export default App;
 
 
 
-
-
-
-
-
-        {/* <Route exact path="/home" component={Home} /> */}
