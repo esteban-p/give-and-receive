@@ -49,9 +49,9 @@ function App(props) {
 
         <ProtectedRoute exact path='/lovepieces' user={user} component={Lovepieces} />
 
-        <ProtectedRoute exact path='/lovepieces/:id' user={user} component={LovepieceDetails} />
-
         <ProtectedRoute exact path='/lovepieces/add' user={user} component={AddLovepiece} />
+
+        <ProtectedRoute exact path='/lovepieces/:id' user={user} component={LovepieceDetails} />
 
         <ProtectedRoute exact path='/profile' user={user} component={Profile} />
 
