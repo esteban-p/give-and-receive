@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App(props) {
 
@@ -32,7 +33,6 @@ function App(props) {
       <Switch>
 
         <Route exact path="/" component={Landing} />
-        <Route exact path="/home" component={Home} />
 
         <Route
           exact path="/signup"
@@ -43,6 +43,14 @@ function App(props) {
           exact path="/login"
           render={props => <Login setUser={addUser} {...props} />}
         />
+        
+        <ProtectedRoute
+          exact path='/home'
+          user={user}
+          component={Home}
+        />
+
+
 
       </Switch>
     </div>
@@ -50,3 +58,13 @@ function App(props) {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+        {/* <Route exact path="/home" component={Home} /> */}
