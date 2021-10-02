@@ -81,6 +81,7 @@ export default function AddLovepiece(props) {
 					value={title}
 					onChange={e => setTitle(e.target.value)}
 				/>
+				<br />
 
         <label htmlFor="type">Type (Offer or Need): </label>
 				<input
@@ -89,6 +90,7 @@ export default function AddLovepiece(props) {
 					value={type}
 					onChange={e => setType(e.target.value)}
 				/>
+				<br />
 
         <label htmlFor="stillValid">Is it currently active? (Yes or No): </label>
 				<input
@@ -97,6 +99,7 @@ export default function AddLovepiece(props) {
 					value={stillValid}
 					onChange={e => setStillValid(e.target.value)}
 				/>
+				<br />
 
 				<label htmlFor="description">Describe your lovepiece: </label>
 				<input
@@ -105,6 +108,7 @@ export default function AddLovepiece(props) {
 					value={description}
 					onChange={e => setDescription(e.target.value)}
 				/>
+				<br />
 
         <label htmlFor="category">Select the category: </label>
 				<input
@@ -113,6 +117,7 @@ export default function AddLovepiece(props) {
 					value={category}
 					onChange={e => setCategory(e.target.value)}
 				/>      
+				<br />
 
         <label htmlFor="tags">Add tags, separated by comma: </label>
 				<input
@@ -121,6 +126,7 @@ export default function AddLovepiece(props) {
 					value={tags}
 					onChange={e => setTags(e.target.value)}
 				/>    
+				<br />
 
 				<button type="submit">Add this lovepiece</button>
 

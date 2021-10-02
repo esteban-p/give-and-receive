@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -30,21 +30,27 @@ export default function LovepieceDetails(props) {
 
 			{lovepiece && (
 				<>
+
 					<h2>{lovepiece.type}: {lovepiece.title}</h2>
           <h4>Created by {lovepiece.owner}</h4>
           <h4>Created on {lovepiece.dateCreated}</h4>
           <h6></h6>
 					<p>{lovepiece.description}</p>
+					<p>User: {props.user._id}</p>
+					<p>lovepieceId: {lovepieceId}</p>
+
+					{lovepiece.owner === user && (
+        		<Link to={`/lovepieces/edit/${lovepiece._id}`}>
+          		<button>Edit this lovepiece</button>
+        		</Link>
+      		)}
+
 				</>
 			)}
 
 
 
-      {/* {lovepiece.owner === user && (
-        <Link to={`/lovepieces/edit/${lovepiece._id}`}>
-          <button>Edit this lovepiece</button>
-        </Link>
-      )} */}
+
 			
 		</div>
 	);

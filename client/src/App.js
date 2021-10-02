@@ -13,6 +13,7 @@ import Profile from './pages/Profile';
 import About from './pages/About';
 import AddLovepiece from './components/AddLovepiece';
 import LovepieceDetails from './pages/LovepieceDetails';
+import EditLovepiece from './components/EditLovepiece';
 
 function App(props) {
 
@@ -52,6 +53,8 @@ function App(props) {
         <ProtectedRoute exact path='/lovepieces/add' user={user} component={AddLovepiece} />
 
         <ProtectedRoute exact path='/lovepieces/:id' user={user} component={LovepieceDetails} />
+
+        <ProtectedRoute exact path='/lovepieces/edit/:id' user={user} component={EditLovepiece} />
 
         <ProtectedRoute exact path='/profile' user={user} component={Profile} />
 
