@@ -73,6 +73,35 @@ router.post('/login', (req, res, next) => {
 });
 
 
+// edit the user Profile
+router.put('/:id', (req, res, next) => {
+	const {
+		username,
+		email,
+		city,
+		country,
+		about,
+		avatarUrl,
+		favourites
+	} = req.body;
+
+	User.findByIdAndUpdate(req.params.id, {
+		username: username,
+		email: email,
+		city: city,
+		country: country,
+		about: about,
+		avatarUrl: avatarUrl,
+		favourites: favourites
+	}, { new: true })
+		.then(updatedProfile => {
+			res.status(200).json(updatedProfile);
+		})
+		.catch(err => next(err));
+});
+
+
+
 router.get('/loggedin', (req, res, next) => {
 	// console.log('this is the loggedin in user from the session: ', req.session.user);
 	const user = req.session.user;

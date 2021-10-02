@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 export default function EditLovepiece(props) {
 
@@ -8,7 +8,7 @@ export default function EditLovepiece(props) {
   
   const API_URL = 'http://localhost:5005';
   
-  const [user, setUser] = useState(props.user._id)
+  const [user, setUser] = useState(props.user._id);
   const [owner, setOwner] = useState('');
   const [title, setTitle] = useState('');
 	const [type, setType] = useState('');
