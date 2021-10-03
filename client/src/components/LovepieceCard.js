@@ -12,8 +12,7 @@ export default function LovepieceCard(
 			<Link to={`/lovepieces/${_id}`}>
 				<h3>{title}</h3>
 			</Link>
-			<p>{description}</p>
-      <p>{owner}</p>
+      <p>{type} from {owner}</p>
 		</div>
 	)
 }

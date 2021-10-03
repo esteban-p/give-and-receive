@@ -5,6 +5,7 @@ const LovePiece = require('../models/LovePiece');
 // get all lovepieces
 router.get('/', (req, res, next) => {
 	LovePiece.find()
+		// .populate('owner') // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		.then(lovepieces => {
 			res.status(200).json(lovepieces);
 		})

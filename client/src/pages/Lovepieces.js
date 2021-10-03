@@ -18,17 +18,14 @@ export default function Lovepieces(props) {
 		// get request to the server
 		axios.get(`${API_URL}/api/lovepieces`)
 			.then(response => {
-				// console.log(response)
+				// console.log(response.data);
 				setLovepieces(response.data);
 			})
 			.catch(err => console.log(err));
 	}
 
   useEffect(() => {
-		// get all the lovepieces from the server
 		getAllLovepieces();
-		// bc of the empty dependency array we only get all the lovepieces  
-		// on the first render (when the component is mounted)
 	}, [])
 
   return (
@@ -38,8 +35,6 @@ export default function Lovepieces(props) {
       <Link to="/lovepieces/add"><button>Add a new lovepiece</button></Link>
 
       {lovepieces.map(lovepiece => <LovepieceCard key={lovepiece._id} {...lovepiece} />)}
-
-      {/* <AddLovepiece refreshLovepieces={getAllLovepieces} /> */}
 
       <Map />
     </div>
