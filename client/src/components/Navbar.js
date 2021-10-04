@@ -26,13 +26,13 @@ export default function Navbar(props) {
   return (
 
   
-    <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-warning" role="navigation" aria-label="main navigation">
       {props.user && (
         <>
               
             {/* -- Original navbar --
             <Link to="/about"><button>About G&R</button></Link>
-            <Link to="/lovepieces"><button  class="button is-primary" >All lovepieces</button></Link>
+            <Link to="/lovepieces"><button  className="button is-primary" >All lovepieces</button></Link>
             <Link to="/profile"><button>{props.user.username}</button></Link>
             <Link to="/" onClick={() => handleLogout()}>
               <button>Logout</button>
@@ -40,39 +40,39 @@ export default function Navbar(props) {
             -- End of original navbar -- */}
 
 
-            <div class="navbar-brand">
-              <a class="navbar-item" >
-                {/* <img class="navbar-item" src="https://bulma.io/images/bulma-logo.png" width="112" height="28" /> */}
-                <img class="navbar-item" src="/client/public/logo192.png" width="50" height="50" alt="G&R logo" />
+            <div className="navbar-brand">
+              <a className="navbar-item" >
+                {/* <img className="navbar-item" src="https://bulma.io/images/bulma-logo.png" width="112" height="28" /> */}
+                <img className="navbar-item" src="/client/public/G&R-logo.png" width="50" height="50" alt="G&R logo" />
               </a>
 
-              <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+              <a role="button" className="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
               </a>
             </div>
 
-            <div id="navMenu" class="navbar-menu">
-              <div class="navbar-start">
-                <a class="navbar-item">
+            <div id="navMenu" className="navbar-menu">
+              <div className="navbar-start">
+                <a className="navbar-item">
                   <Link to="/lovepieces">All lovepieces</Link>
                 </a>
 
-                <a class="navbar-item">
+                <a className="navbar-item">
                   <Link to="/about">About G&R</Link>
                 </a>
               </div>
 
-              <div class="navbar-end">
-                <div class="navbar-item">
-                  <div class="buttons">
-                    <a class="button is-primary">
+              <div className="navbar-end">
+                <div className="navbar-item">
+                  <div className="buttons">
+                    <a className="button is-primary">
                       <Link to="/profile">
                         <strong>{props.user.username}</strong>
                       </Link>
                     </a>
-                    <a class="button is-light">
+                    <a className="button is-light">
                       <Link to="/" onClick={() => handleLogout()}>
                         Logout
                       </Link>
@@ -90,4 +90,5 @@ export default function Navbar(props) {
   )
 }
   
+// style="color:black;"
   

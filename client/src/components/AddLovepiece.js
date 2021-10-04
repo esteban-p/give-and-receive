@@ -72,12 +72,12 @@ export default function AddLovepiece(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-      <h3 class="title is-3" >Create your new lovepiece</h3>
+      <h3 className="title is-3" >Create your new lovepiece</h3>
 
 
-				<div class="field is-grouped">
-					<label class="label" htmlFor="type">Type (Offer or Need): </label>
-						<div class="select">
+				<div className="field is-grouped">
+					<label className="label" htmlFor="type">Type (Offer or Need): </label>
+						<div className="select">
 							<select 
 								name="type"
 								onChange={e => setType(e.target.value)}
@@ -89,10 +89,10 @@ export default function AddLovepiece(props) {
 						</div>	
 				</div>
 
-				<div class="field">
-					<label class="label" htmlFor="title">Lovepiece title: </label>
+				<div className="field">
+					<label className="label" htmlFor="title">Lovepiece title: </label>
 					<input
-						class="input"
+						className="input"
 						placeholder="Write a few words as title"
 						type="text"
 						name="title"
@@ -101,11 +101,11 @@ export default function AddLovepiece(props) {
 					/>
 				</div>
 
-				<div class="field">
-					<label class="label">Description</label>
-					<div class="control">
+				<div className="field">
+					<label className="label">Description</label>
+					<div className="control">
 						<textarea 
-							class="textarea" 
+							className="textarea" 
 							placeholder="Describe your new lovepiece in more detail for other users"
 							value={description}
 							onChange={e => setDescription(e.target.value)}
@@ -114,9 +114,9 @@ export default function AddLovepiece(props) {
 					</div>
 				</div>
 
-				<div class="field is-grouped">	
-					<label class="label" htmlFor="category">Category: </label>
-					<div class="select">
+				<div className="field is-grouped">	
+					<label className="label" htmlFor="category">Category: </label>
+					<div className="select">
 						<select 
 							name="category"
 							onChange={e => setType(e.target.value)}
@@ -128,9 +128,9 @@ export default function AddLovepiece(props) {
 					</div>	
 				</div>
 
-				{/* <div class="field is-grouped">	
-					<label class="label" htmlFor="subCategory">Sub-category: </label>
-					<div class="select">
+				{/* <div className="field is-grouped">	
+					<label className="label" htmlFor="subCategory">Sub-category: </label>
+					<div className="select">
 						<select 
 							name="subCategory"
 							onChange={e => setType(e.target.value)}
@@ -146,10 +146,10 @@ export default function AddLovepiece(props) {
 					</div>	
 				</div> */}
 
-				<div class="field">
-					<label class="label" htmlFor="tags">Add tags so other users can easily find your lovepiece (tags are separated by comma):</label>
+				<div className="field">
+					<label className="label" htmlFor="tags">Add tags so other users can easily find your lovepiece (tags are separated by comma):</label>
 					<input
-						class="input"
+						className="input"
 						placeholder="e.g. math, carpentry, weekend"
 						type="text"
 						name="tags"
@@ -159,9 +159,9 @@ export default function AddLovepiece(props) {
 				</div>
 
 
-				<div class="field">
-					<div class="control">	
-						<button class="button is-primary" type="submit">Add this lovepiece</button>
+				<div className="field">
+					<div className="control">	
+						<button className="button is-primary" type="submit">Add this lovepiece</button>
 					</div>
 				</div>
 

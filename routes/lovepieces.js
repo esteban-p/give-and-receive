@@ -16,6 +16,7 @@ router.get('/', (req, res, next) => {
 // get a specific lovepiece
 router.get('/:id', (req, res, next) => {
 	LovePiece.findById(req.params.id)
+		.populate('owner')
 		.then(lovepiece => {
 			// check if the id is not valid
 			// if (!mongoose.Types.ObjectId.isValid(req.params.id))
