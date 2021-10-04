@@ -30,4 +30,15 @@ const logout = () => {
 		});
 }
 
-export { signup, login, logout };
+const loggedinUser = () => {
+	return axios.get('/api/auth/loggedin')
+  .then(response => {
+		return response.data;
+	})
+	.catch(err => {
+		return err.response.data;
+	});
+}
+
+
+export { signup, login, logout, loggedinUser };

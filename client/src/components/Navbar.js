@@ -1,6 +1,7 @@
-import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { logout } from '../services/auth';
+import { logout, loggedinUser } from '../services/auth';
+
 
 export default function Navbar(props) {
 
@@ -12,6 +13,15 @@ export default function Navbar(props) {
 		})
 	}
 
+  // const [userForButton, setUserForButton] = useState('');
+  // const getUserForButton = () => {
+  //   loggedinUser()
+  //     .then(response => {
+  //       // console.log(response._id);
+  //       setUserForButton(response._id);
+  //     })
+  // }
+  // getUserForButton();
 
   return (
 
