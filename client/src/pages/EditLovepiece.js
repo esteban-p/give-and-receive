@@ -13,6 +13,7 @@ export default function EditLovepiece(props) {
   const [title, setTitle] = useState('');
 	const [type, setType] = useState('');
   const [dateCreated, setDateCreated] = useState('');
+  const [formattedDateCreated, setFormattedDateCreated] = useState('');
   const [stillValid, setStillValid] = useState(true);
   const [description, setDescription] = useState('');
   const [coords, setCoords] = useState([]);
@@ -28,10 +29,15 @@ export default function EditLovepiece(props) {
 			.then(response => {
 				console.log('use effect: ', response.data);
 				setUser(response.data.user);
-        setOwner(response.data.owner);
+        setOwner(response.data.owner._id);
         setTitle(response.data.title);
         setType(response.data.type);
         setDateCreated(response.data.dateCreated);
+        setFormattedDateCreated(
+					response.data.dateCreated.slice(8,10) + '/' +
+					response.data.dateCreated.slice(5,7) + '/' +
+					response.data.dateCreated.slice(0,4)
+				);
         setStillValid(response.data.stillValid);
 				setDescription(response.data.description);
         setCoords(response.data.coords);
@@ -75,11 +81,10 @@ export default function EditLovepiece(props) {
   return (
     <div>
       <h3>Edit your lovepiece</h3>
-      <h4>(owner: {owner})</h4>
       <h4>(coords: {coords})</h4>
-      <h4>{title}</h4>
-      <h4>{dateCreated}</h4>
-      <h4>{type}</h4>
+      <h4>Title: {title}</h4>
+      <h4>Created on {formattedDateCreated}</h4>
+      <h4>Type: {type}</h4>
 
       <form onSubmit={handleSubmit}>
 

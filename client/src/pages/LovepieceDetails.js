@@ -6,6 +6,7 @@ export default function LovepieceDetails(props) {
 	
   const API_URL = 'http://localhost:5005';
 	const [lovepiece, setLovepiece] = useState(null);
+	const [formattedDateCreated, setFormattedDateCreated] = useState('');
 	const lovepieceId = props.match.params.id;
   const user = props.user._id;
   // console.log('lovepieceDetails user: ', user)
@@ -15,6 +16,11 @@ export default function LovepieceDetails(props) {
 			.then(response => {
 				// console.log(response.data);
 				setLovepiece(response.data);
+				setFormattedDateCreated(
+					response.data.dateCreated.slice(8,10) + '/' +
+					response.data.dateCreated.slice(5,7) + '/' +
+					response.data.dateCreated.slice(0,4)
+				);
 			})
 			.catch(err => console.log(err))
 	}
@@ -31,14 +37,15 @@ export default function LovepieceDetails(props) {
 			{lovepiece && (
 				<>
 
-					<h2>{lovepiece.type}: {lovepiece.title}</h2>
+					<h2>{lovepiece.type} > {lovepiece.category} > {lovepiece.title}</h2>
           <h4>Created by {lovepiece.owner.username}</h4>
-          <h4>Created on {lovepiece.dateCreated}</h4>
+					<h4>Created on {formattedDateCreated}</h4>
           <h6></h6>
 					<p>{lovepiece.description}</p>
+					<p>{lovepiece.tags}</p>
 
 
-					{lovepiece.owner === user && (
+					{lovepiece.owner._id === user && (
         		<Link to={`/lovepieces/edit/${lovepiece._id}`}>
           		<button>Edit this lovepiece</button>
         		</Link>
@@ -54,3 +61,4 @@ export default function LovepieceDetails(props) {
 		</div>
 	);
 }
+

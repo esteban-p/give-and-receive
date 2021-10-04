@@ -11,9 +11,9 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import About from './pages/About';
-import AddLovepiece from './components/AddLovepiece';
+import AddLovepiece from './pages/AddLovepiece';
 import LovepieceDetails from './pages/LovepieceDetails';
-import EditLovepiece from './components/EditLovepiece';
+import EditLovepiece from './pages/EditLovepiece';
 
 function App(props) {
 

@@ -55,6 +55,7 @@ export default function AddLovepiece(props) {
         setCoords([]);
         setCategory('');
         setSubCategory('');
+				setTags('');
 
 
 				// we need to trigger 'getAllLovepieces' in the Lovepieces component
@@ -76,17 +77,31 @@ export default function AddLovepiece(props) {
 
 
 				<div className="field is-grouped">
-					<label className="label" htmlFor="type">Type (Offer or Need): </label>
+					<label className="label" htmlFor="type">Type: </label>
 						<div className="select">
 							<select 
 								name="type"
 								onChange={e => setType(e.target.value)}
 								>
-								<option value="">Choose type</option>
-								<option value="offer">Offer</option>
-								<option value="need">Need</option>
+								<option value="">Select the type</option>
+								<option value="Offer">Offer</option>
+								<option value="Need">Need</option>
 							</select>
 						</div>	
+				</div>
+
+				<div className="field is-grouped">	
+					<label className="label" htmlFor="category">Category: </label>
+					<div className="select">
+						<select 
+							name="category"
+							onChange={e => setCategory(e.target.value)}
+							>
+							<option value="">Select the category</option>
+							<option value="Time">Time</option>
+							<option value="Stuff">Stuff</option>
+						</select>
+					</div>	
 				</div>
 
 				<div className="field">
@@ -106,7 +121,7 @@ export default function AddLovepiece(props) {
 					<div className="control">
 						<textarea 
 							className="textarea" 
-							placeholder="Describe your new lovepiece in more detail for other users"
+							placeholder="Describe your lovepiece in more detail for other users"
 							value={description}
 							onChange={e => setDescription(e.target.value)}
 						>
@@ -114,19 +129,7 @@ export default function AddLovepiece(props) {
 					</div>
 				</div>
 
-				<div className="field is-grouped">	
-					<label className="label" htmlFor="category">Category: </label>
-					<div className="select">
-						<select 
-							name="category"
-							onChange={e => setType(e.target.value)}
-							>
-							<option value="">Select the category</option>
-							<option value="time">Time available to donate</option>
-							<option value="stuff">Stuff available to donate</option>
-						</select>
-					</div>	
-				</div>
+
 
 				{/* <div className="field is-grouped">	
 					<label className="label" htmlFor="subCategory">Sub-category: </label>

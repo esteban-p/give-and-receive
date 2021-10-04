@@ -14,7 +14,7 @@ const lovePieceSchema = new Schema({
   coords: [],
   category: String,
   subCategory: String,
-  tags: []
+  tags: String
   
 });
 

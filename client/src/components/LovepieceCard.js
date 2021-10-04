@@ -8,10 +8,10 @@ export default function LovepieceCard(props) {
 
 	return (
 		<div>
+      <p>{props.type} from {props.owner.username}</p>
 			<Link to={`/lovepieces/${props._id}`}>
 				<h3>{props.title}</h3>
 			</Link>
-      <p>{props.type} from {props.owner.username}</p>
 		</div>
 	)
 }

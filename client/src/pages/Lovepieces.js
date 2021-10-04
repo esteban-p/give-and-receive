@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Map from '../components/Map';
 import LovepieceCard from '../components/LovepieceCard';
-import AddLovepiece from '../components/AddLovepiece';
+import AddLovepiece from './AddLovepiece';
 
 
 
@@ -13,21 +13,29 @@ export default function Lovepieces(props) {
 
   const API_URL = 'http://localhost:5005';
   const [lovepieces, setLovepieces] = useState([]);
-  const [searchFilter, setSearchFilter] = useState('all');
+  const [typeFilter, setTypeFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('all');
+  const [tagsFilter, setTagsFilter] = useState('');
 
   const getAllLovepieces = () => {
 		axios.get(`${API_URL}/api/lovepieces`)
 			.then(response => {
+        // console.log('all the response before filters: ', response.data);
+        // console.log('tagsFilter: ', tagsFilter);
 				setLovepieces(response.data
           .filter(lovepiece => {
-            if (searchFilter === 'offer') return lovepiece.type === 'offer';
-            else if (searchFilter === 'need') return lovepiece.type === 'need';
+            if (typeFilter === 'Offer') return lovepiece.type === 'Offer';
+            else if (typeFilter === 'Need') return lovepiece.type === 'Need';
             else return lovepiece;
           })
           .filter(lovepiece => {
-            if (categoryFilter === 'time') return lovepiece.category === 'time';
-            else if (categoryFilter === 'stuff') return lovepiece.category === 'stuff';
+            if (categoryFilter === 'Time') return lovepiece.category === 'Time';
+            else if (categoryFilter === 'Stuff') return lovepiece.category === 'Stuff';
+            else return lovepiece;
+          })
+          .filter(lovepiece => {
+            if (tagsFilter !== '') return lovepiece.tags.includes(tagsFilter);
+            // if (tagsFilter !== '') return lovepiece.tags.toLowerCase().includes(tagsFilter.toLowerCase());
             else return lovepiece;
           })
         );
@@ -38,7 +46,7 @@ export default function Lovepieces(props) {
 
   useEffect(() => {
 		getAllLovepieces();
-	}, [searchFilter, categoryFilter])
+	}, [typeFilter, categoryFilter, tagsFilter])
 
 
 
@@ -53,11 +61,11 @@ export default function Lovepieces(props) {
         <div className="select">
           <select 
             name="type"
-            onChange={e => setSearchFilter(e.target.value)}
+            onChange={e => setTypeFilter(e.target.value)}
             >
             <option value="all">All</option>
-            <option value="offer">Offers</option>
-            <option value="need">Needs</option>
+            <option value="Offer">Offers</option>
+            <option value="Need">Needs</option>
           </select>
         </div>	
 			</div>
@@ -70,12 +78,23 @@ export default function Lovepieces(props) {
             onChange={e => setCategoryFilter(e.target.value)}
             >
             <option value="all">All</option>
-            <option value="time">Time</option>
-            <option value="stuff">Stuff</option>
+            <option value="Time">Time</option>
+            <option value="Stuff">Stuff</option>
           </select>
         </div>	
 			</div>
 
+      <div className="field">
+					<label className="label" htmlFor="tags">Search by one word:</label>
+					<input
+						className="input"
+						placeholder="e.g. math, carpentry, weekend"
+						type="text"
+						name="tags"
+						value={tagsFilter}
+						onChange={e => setTagsFilter(e.target.value)}
+					/>    
+				</div>
 
 
 
@@ -93,7 +112,7 @@ export default function Lovepieces(props) {
 
 
 
- // --- WORKS OK: getAllLovepieces before any filters ---
+// --- WORKS OK: getAllLovepieces before any filters ---
   // const getAllLovepieces = () => {
 	// 	axios.get(`${API_URL}/api/lovepieces`)
 	// 		.then(response => {
@@ -102,7 +121,6 @@ export default function Lovepieces(props) {
 	// 		})
 	// 		.catch(err => console.log(err));
 	// }
-
 
 
 // --- WORKS OK: getAllLovepieces with the type filter ---
@@ -122,3 +140,22 @@ export default function Lovepieces(props) {
 	// }
 
 
+// --- WORKS OK: getAllLovepieces with the type and category filters ---
+  // const getAllLovepieces = () => {
+	// 	axios.get(`${API_URL}/api/lovepieces`)
+	// 		.then(response => {
+	// 			setLovepieces(response.data
+  //         .filter(lovepiece => {
+  //           if (searchFilter === 'offer') return lovepiece.type === 'offer';
+  //           else if (searchFilter === 'need') return lovepiece.type === 'need';
+  //           else return lovepiece;
+  //         })
+  //         .filter(lovepiece => {
+  //           if (categoryFilter === 'time') return lovepiece.category === 'time';
+  //           else if (categoryFilter === 'stuff') return lovepiece.category === 'stuff';
+  //           else return lovepiece;
+  //         })
+  //       );
+	// 		})
+	// 		.catch(err => console.log(err));
+	// }
