@@ -7,13 +7,39 @@ export default function LovepieceCard(props) {
 
 
 	return (
-		<div>
-      <p>{props.type} from {props.owner.username}</p>
-			<Link to={`/lovepieces/${props._id}`}>
-				<h3>{props.title}</h3>
-			</Link>
+		
+		<div className="card">
+			<div className="card-content">
+				<div className="media">
+					<div className="media-left">
+						<figure className="image is-48x48">
+							<img className="is-rounded" src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+						</figure>
+					</div>
+					<div className="media-content">
+						<Link to={`/lovepieces/${props._id}`}>
+							<h3>{props.title}</h3>
+						</Link>
+						<p className="subtitle is-6">{props.type} of {props.category} from {props.owner.username}</p>
+					</div>
+				</div>
+			</div>
 		</div>
+		
 	)
 }
 
 
+
+
+
+
+// --- Original card before styling with Bulma ---
+// return (
+// 	<div>
+// 		<p>{props.type} from {props.owner.username}</p>
+// 		<Link to={`/lovepieces/${props._id}`}>
+// 			<h3>{props.title}</h3>
+// 		</Link>
+// 	</div>
+// )

@@ -15,18 +15,22 @@ export default function Landing() {
         </div>
       </section>
 
-      <div className="columns">
-          <div className="column">
-                <Link to="/signup">
-                  <button className="button is-warning">Signup</button>
-                </Link>
+      <section>
+        <div className="box">
+          <div className="columns is-centered">
+            <div className="column is-one-fifth has-text-centered">
+                  <Link to="/signup">
+                    <button className="button is-info">Signup</button>
+                  </Link>
+            </div>
+            <div className="column is-one-fifth has-text-centered">
+                  <Link to="/login">
+                  <button className="button is-info">Log in</button>
+                  </Link>
+            </div>
           </div>
-          <div className="column">
-                <Link to="/login">
-                <button className="button is-warning is-rounded">Log in</button>
-                </Link>
-          </div>
-      </div>
+        </div>
+      </section>
 
     </div>
   )

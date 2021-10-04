@@ -34,8 +34,7 @@ export default function Lovepieces(props) {
             else return lovepiece;
           })
           .filter(lovepiece => {
-            if (tagsFilter !== '') return lovepiece.tags.includes(tagsFilter);
-            // if (tagsFilter !== '') return lovepiece.tags.toLowerCase().includes(tagsFilter.toLowerCase());
+            if (tagsFilter !== '') return lovepiece.tags.toLowerCase().includes(tagsFilter.toLowerCase());
             else return lovepiece;
           })
         );
@@ -54,59 +53,79 @@ export default function Lovepieces(props) {
 
   return (
     <div>
-      <h3>Lovepieces Page</h3>
       
-      <div className="field is-grouped">	
-        <label className="label" htmlFor="type">Lovepiece type: </label>
-        <div className="select">
-          <select 
-            name="type"
-            onChange={e => setTypeFilter(e.target.value)}
-            >
-            <option value="all">All</option>
-            <option value="Offer">Offers</option>
-            <option value="Need">Needs</option>
-          </select>
-        </div>	
-			</div>
+      <div className="box">
+        <div className="columns is-vcentered">
 
-      <div className="field is-grouped">	
-        <label className="label" htmlFor="category">Lovepiece category: </label>
-        <div className="select">
-          <select 
-            name="category"
-            onChange={e => setCategoryFilter(e.target.value)}
-            >
-            <option value="all">All</option>
-            <option value="Time">Time</option>
-            <option value="Stuff">Stuff</option>
-          </select>
-        </div>	
-			</div>
+          <div className="column">
+            <div className="block">
+              <h1 className="title is-4">These are all the current lovepieces</h1>
+            </div>
+            <div className="block">
+              <div className="field is-grouped">	
+                <div className="select">
+                  <select 
+                    name="type"
+                    onChange={e => setTypeFilter(e.target.value)}
+                    >
+                    <option value="all">All types</option>
+                    <option value="Offer">Offers</option>
+                    <option value="Need">Needs</option>
+                  </select>
+                </div>	
+                <div className="select">
+                  <select 
+                    name="category"
+                    onChange={e => setCategoryFilter(e.target.value)}
+                    >
+                    <option value="all">All categories</option>
+                    <option value="Time">Time</option>
+                    <option value="Stuff">Stuff</option>
+                  </select>
+                </div>	
+              </div>
+	
+              
+              <div className="field">
+                  <label className="label" htmlFor="tags">Search by one word:</label>
+                  <input
+                    className="input"
+                    placeholder="e.g. math, carpentry, weekend"
+                    type="text"
+                    name="tags"
+                    value={tagsFilter}
+                    onChange={e => setTagsFilter(e.target.value)}
+                  />    
+              </div>
+            </div>
+            <div className="block">
+              {lovepieces.map(lovepiece => <LovepieceCard key={lovepiece._id} {...lovepiece} />)}
+            </div>
+            <div className="block">
+              <Link to="/lovepieces/add">
+                <button className="button is-primary"><strong>Add a new lovepiece</strong></button>
+              </Link>
+            </div>
+          </div>
+          <div className="column"> 
+            <div className="box">
+              <Map />
+            </div>
+          </div>
 
-      <div className="field">
-					<label className="label" htmlFor="tags">Search by one word:</label>
-					<input
-						className="input"
-						placeholder="e.g. math, carpentry, weekend"
-						type="text"
-						name="tags"
-						value={tagsFilter}
-						onChange={e => setTagsFilter(e.target.value)}
-					/>    
-				</div>
+        </div>
+      </div>
 
 
-
-
-      <Link to="/lovepieces/add"><button className="button is-success">Add a new lovepiece</button></Link>
-
-      {lovepieces.map(lovepiece => <LovepieceCard key={lovepiece._id} {...lovepiece} />)}
-
-      <Map />
     </div>
   )
 }
+
+
+
+
+
+
 
 
 

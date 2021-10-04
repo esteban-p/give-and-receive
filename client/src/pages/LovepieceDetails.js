@@ -33,7 +33,6 @@ export default function LovepieceDetails(props) {
 
 	return (
 		<div>
-
 			{lovepiece && (
 				<>
 
@@ -44,7 +43,6 @@ export default function LovepieceDetails(props) {
 					<p>{lovepiece.description}</p>
 					<p>{lovepiece.tags}</p>
 
-
 					{lovepiece.owner._id === user && (
         		<Link to={`/lovepieces/edit/${lovepiece._id}`}>
           		<button>Edit this lovepiece</button>
@@ -53,12 +51,33 @@ export default function LovepieceDetails(props) {
 
 				</>
 			)}
-
-
-
-
-			
 		</div>
 	);
 }
 
+
+
+// --- Before applying any Bulma styling ---
+
+// return (
+// 	<div>
+// 		{lovepiece && (
+// 			<>
+
+// 				<h2>{lovepiece.type} > {lovepiece.category} > {lovepiece.title}</h2>
+// 				<h4>Created by {lovepiece.owner.username}</h4>
+// 				<h4>Created on {formattedDateCreated}</h4>
+// 				<h6></h6>
+// 				<p>{lovepiece.description}</p>
+// 				<p>{lovepiece.tags}</p>
+
+// 				{lovepiece.owner._id === user && (
+// 					<Link to={`/lovepieces/edit/${lovepiece._id}`}>
+// 						<button>Edit this lovepiece</button>
+// 					</Link>
+// 				)}
+
+// 			</>
+// 		)}
+// 	</div>
+// );

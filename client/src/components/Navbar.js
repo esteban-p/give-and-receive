@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { logout, loggedinUser } from '../services/auth';
 
 
@@ -26,7 +26,7 @@ export default function Navbar(props) {
   return (
 
   
-    <nav className="navbar is-warning" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
       {props.user && (
         <>
               
@@ -56,20 +56,35 @@ export default function Navbar(props) {
             <div id="navMenu" className="navbar-menu">
               <div className="navbar-start">
                 <a className="navbar-item">
-                  <Link to="/lovepieces">All lovepieces</Link>
+                  <NavLink 
+                    to="/lovepieces" 
+                    activeStyle={{
+                      fontWeight: "bold",
+                      color: "grey"
+                    }}
+                  >
+                  All lovepieces
+                  </NavLink>
                 </a>
-
                 <a className="navbar-item">
-                  <Link to="/about">About G&R</Link>
+                  <NavLink 
+                    to="/about"
+                    activeStyle={{
+                      fontWeight: "bold",
+                      color: "white"
+                    }}
+                  >
+                  About G&R
+                  </NavLink>
                 </a>
               </div>
 
               <div className="navbar-end">
                 <div className="navbar-item">
                   <div className="buttons">
-                    <a className="button is-primary">
+                    <a className="button is-light">
                       <Link to="/profile">
-                        <strong>{props.user.username}</strong>
+                        {props.user.username}
                       </Link>
                     </a>
                     <a className="button is-light">

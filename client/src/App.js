@@ -14,6 +14,7 @@ import About from './pages/About';
 import AddLovepiece from './pages/AddLovepiece';
 import LovepieceDetails from './pages/LovepieceDetails';
 import EditLovepiece from './pages/EditLovepiece';
+import Footer from './components/Footer';
 
 function App(props) {
 
@@ -61,6 +62,9 @@ function App(props) {
         <ProtectedRoute exact path='/about' user={user} component={About} />
 
       </Switch>
+
+      <Footer />
+
     </div>
   );
 }
