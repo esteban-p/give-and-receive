@@ -63,7 +63,7 @@ export default function Lovepieces(props) {
             </div>
             <div className="block">
               <div className="field is-grouped">	
-                <div className="select">
+                <div className="select mb-4">
                   <select 
                     name="type"
                     onChange={e => setTypeFilter(e.target.value)}
@@ -73,7 +73,7 @@ export default function Lovepieces(props) {
                     <option value="Need">Needs</option>
                   </select>
                 </div>	
-                <div className="select">
+                <div className="select mx-5">
                   <select 
                     name="category"
                     onChange={e => setCategoryFilter(e.target.value)}
