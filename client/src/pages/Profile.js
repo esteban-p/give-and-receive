@@ -133,6 +133,7 @@ export default function Profile(props) {
 
         </div>
       </div>
+      <br />
 
     </div>
   )

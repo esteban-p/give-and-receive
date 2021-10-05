@@ -147,26 +147,28 @@ export default function EditLovepiece(props) {
               />   
             </div>
 
+            <br />
+            <button
+              className="button is-primary"
+              type="submit"
+            >
+            Update this lovepiece
+            </button>
+
           </div>
 
-          <button
-            className="button is-primary"
-            type="submit"
-          >
-          Update this lovepiece
-          </button>
 
           
-          <br /><br />
+          <br />
         
         </form>
 
        
           <button 
-            className="button is-danger"
+            className="button is-danger ml-5"
             onClick={deleteLovepiece}
           >
-          Delete this lovepiece!
+          Delete this lovepiece
           </button>
           <br /><br />
 

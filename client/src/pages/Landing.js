@@ -29,6 +29,7 @@ export default function Landing() {
                   </Link>
             </div>
           </div>
+          <br /><br />
         </div>
       </section>
 

@@ -147,14 +147,11 @@ export default function Signup(props) {
 
 
 						{message && (
-
 							<article class="message is-dark">
 								<div class="message-body">
 									{message} 
 								</div>
 							</article>
-
-
 						)}
 
 					</div>
