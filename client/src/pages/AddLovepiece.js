@@ -121,7 +121,7 @@ export default function AddLovepiece(props) {
 						</div>
 
 						<div className="field">
-							<label className="label">Description</label>
+							<label className="label">Description:</label>
 							<div className="control">
 								<textarea 
 									className="textarea" 

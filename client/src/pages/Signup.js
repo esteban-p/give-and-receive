@@ -43,77 +43,129 @@ export default function Signup(props) {
 			.catch(err => console.log(err));
 	}
 
+	const uploadAvatar = () => {
+
+	}
+
+
+
 	return (
 		<>
-			<h3>Signup</h3>
 			<form onSubmit={handleSubmit}>
+			<br /><br />
 
-				<label htmlFor="username">Username: </label>
-				<input
-					type="text"
-					name="username"
-					value={username}
-					onChange={e => setUsername(e.target.value)}
-				/>
+				<div className="columns is-centered">
+					<div className="box">
+						<h3 className="title is-4">Create your account</h3>
 
-				<label htmlFor="password">Password: </label>
-				<input
-					type="password"
-					name="password"
-					value={password}
-					onChange={e => setPassword(e.target.value)}
-				/>
+						<div className="field is-grouped">
+							<label className="label mr-3" htmlFor="username">Username: </label>
+							<input
+								className="input"
+								type="text"
+								name="username"
+								value={username}
+								onChange={e => setUsername(e.target.value)}
+							/>
+						</div>
 
-        <label htmlFor="email">Email: </label>
-				<input
-					type="text"
-					name="email"
-					value={email}
-					onChange={e => setEmail(e.target.value)}
-				/>
+						<div className="field is-grouped">
+							<label className="label mr-3" htmlFor="password">Password: </label>
+							<input
+								className="input"
+								type="password"
+								name="password"
+								value={password}
+								onChange={e => setPassword(e.target.value)}
+							/>
+						</div>
 
-        <label htmlFor="city">City: </label>
-				<input
-					type="text"
-					name="city"
-					value={city}
-					onChange={e => setCity(e.target.value)}
-				/>
+						<div className="field is-grouped">
+							<label className="label mr-3" htmlFor="email">Email: </label>
+							<input
+								className="input"
+								type="text"
+								name="email"
+								value={email}
+								onChange={e => setEmail(e.target.value)}
+							/>
+						</div>
 
-        <label htmlFor="country">Country: </label>
-				<input
-					type="text"
-					name="country"
-					value={country}
-					onChange={e => setCountry(e.target.value)}
-				/>
+						<div className="field is-grouped">
+							<label className="label mr-3" htmlFor="city">City: </label>
+							<input
+								className="input"
+								type="text"
+								name="city"
+								value={city}
+								onChange={e => setCity(e.target.value)}
+							/>
+						</div>
 
-        <label htmlFor="about">Tell other people something about you: </label>
-				<input
-					type="text"
-					name="about"
-					value={about}
-					onChange={e => setAbout(e.target.value)}
-				/>
+						<div className="field is-grouped">
+						<label className="label mr-3" htmlFor="country">Country: </label>
+						<input
+							className="input"
+							type="text"
+							name="country"
+							value={country}
+							onChange={e => setCountry(e.target.value)}
+						/>
+						</div>
 
-        <label htmlFor="avatarUrl">Upload an avatar for your profile: </label>
-				<input
-					type="text"
-					name="avatarUrl"
-					value={avatarUrl}
-					onChange={e => setAvatarUrl(e.target.value)}
-				/>
+						<div className="field">
+							<label className="label" htmlFor="about">Tell other people something about you: </label>
+							<div className="control">
+								<textarea
+									className="textarea" 
+									value={about}
+									onChange={e => setAbout(e.target.value)}
+								>
+								</textarea>
+							</div>
+						</div>
+						<br />
+
+						<div className="field">
+							<button 
+								className="button is-warning is-light is-focused" 
+								onClick={uploadAvatar}
+							>
+							Upload your profile image
+							</button>
+						</div>
+						<br /><br />
+
+						<div class="buttons is-centered">
+							<button 
+								className="button is-primary is-focused" 
+								type="submit"
+							>
+							Create account
+							</button>
+						</div>
 
 
+						{message && (
+
+							<article class="message is-dark">
+								<div class="message-body">
+									{message} 
+								</div>
+							</article>
 
 
-				<button type="submit">Sign Up</button>
+						)}
 
-				{message && (
-					<h3>{message}</h3>
-				)}
+					</div>
+				</div>
+				<br /><br />
 
 			</form>
 		</>
 	)
 }
+
+
+
+{/* <h3>{message}</h3> */}

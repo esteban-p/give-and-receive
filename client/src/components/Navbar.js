@@ -43,7 +43,7 @@ export default function Navbar(props) {
             <div className="navbar-brand">
               <a className="navbar-item" >
                 {/* <img className="navbar-item" src="https://bulma.io/images/bulma-logo.png" width="112" height="28" /> */}
-                <img className="navbar-item" src="/client/public/G&R-logo.png" width="50" height="50" alt="G&R logo" />
+                <img className="navbar-item" src="/client/public/G&R-logo.png" width="50" height="50" alt="" />
               </a>
 
               <a role="button" className="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
