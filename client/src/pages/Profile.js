@@ -49,64 +49,90 @@ export default function Profile(props) {
 			.catch(err => console.log(err))
 	}
 
+	const uploadAvatar = () => {
 
+	}
 
   return (
+    
     <div>
-      <h3>Edit your profile {user}</h3>
-      <h3>{username}</h3>
+      
+      <div className="column is-half ml-5">
+        <div className="box">
+        
+            <h3 className="title is-4">Update your profile, {username}</h3>
 
-      <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
-        <label htmlFor="email">Email: </label>
-        <input
-          type="text"
-          name="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-        <br />
+              <div className="field is-grouped">
+                <label className="label mr-3" htmlFor="email">Email: </label>
+                <input
+                  className="input"
+                  type="text"
+                  name="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                />
+              </div>
 
-        <label htmlFor="city">City: </label>
-        <input
-          type="text"
-          name="city"
-          value={city}
-          onChange={e => setCity(e.target.value)}
-        />
-        <br />
+              <div className="field is-grouped">
+                <label className="label mr-3" htmlFor="city">City: </label>
+                <input
+                  className="input"
+                  type="text"
+                  name="city"
+                  value={city}
+                  onChange={e => setCity(e.target.value)}
+                />
+              </div>
 
-        <label htmlFor="country">Country: </label>
-        <input
-          type="text"
-          name="country"
-          value={country}
-          onChange={e => setCountry(e.target.value)}
-        />
-        <br />
+              <div className="field is-grouped">
+                <label className="label mr-3" htmlFor="country">Country: </label>
+                <input
+                  className="input"
+                  type="text"
+                  name="country"
+                  value={country}
+                  onChange={e => setCountry(e.target.value)}
+                />
+              </div>
 
-        <label htmlFor="about">About: </label>
-        <input
-          type="text"
-          name="about"
-          value={about}
-          onChange={e => setAbout(e.target.value)}
-        />
-        <br />
+              <div className="field">
+                <label className="label" htmlFor="about">About you: </label>
+                <div className="control">
+                  <textarea
+                    className="textarea" 
+                    value={about}
+                    onChange={e => setAbout(e.target.value)}
+                  >
+                  </textarea>
+                </div>
+              </div>
+              <br />
+                
+              <div className="field">
+                <button 
+                  className="button is-warning is-light is-focused" 
+                  onClick={uploadAvatar}
+                >
+                Change your profile image
+                </button>
+              </div>
+              <br /><br />
+      
+              <div class="buttons is-centered">
+                <button 
+                  className="button is-primary is-focused" 
+                  type="submit"
+                >
+                Save changes
+                </button>
+              </div>
 
-        <label htmlFor="avatarUrl">Upload a new avatar: </label>
-        <input
-          type="text"
-          name="avatarUrl"
-          value={avatarUrl}
-          onChange={e => setAvatarUrl(e.target.value)}
-        />
-        <br />
+            </form>
 
-        <br />
-        <button type="submit">Save changes</button>
-
-      </form>
+        </div>
+      </div>
 
     </div>
   )
