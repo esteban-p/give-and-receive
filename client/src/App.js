@@ -16,6 +16,7 @@ import LovepieceDetails from './pages/LovepieceDetails';
 import EditLovepiece from './pages/EditLovepiece';
 import Footer from './components/Footer';
 
+
 function App(props) {
 
   const [user, setUser] = useState(props.user)
@@ -60,6 +61,7 @@ function App(props) {
         <ProtectedRoute exact path='/profile' user={user} component={Profile} />
 
         <ProtectedRoute exact path='/about' user={user} component={About} />
+
 
       </Switch>
 

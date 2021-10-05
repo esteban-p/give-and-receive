@@ -1,5 +1,7 @@
-/* ------------------------------------------- */
+
 /* --- From Mapbox tutorial --- */
+/* https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/ */
+
 .map-container {
   height: 400px;
   /* width: 70vw; */
@@ -18,4 +20,4 @@
   margin: 12px;
   border-radius: 4px;
   }
-  /* ------------------------------------------- */
+  

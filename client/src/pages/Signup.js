@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { signup } from '../services/auth';
+// import { signup } from '../services/auth';
+import { signup, service, handleUpload } from '../services/auth';
 import axios from 'axios';
+
 
 
 export default function Signup(props) {
@@ -46,6 +48,27 @@ export default function Signup(props) {
 	const uploadAvatar = () => {
 
 	}
+
+
+
+
+									const handleFileUpload = e => {
+										console.log("The file to be uploaded is: ", e.target.files[0]);
+										const uploadData = new FormData();
+										uploadData.append('avatarUrl', e.target.files[0]);
+
+										// service
+										// 	.handleUpload(uploadData)
+										handleUpload(uploadData)
+											.then(response => {
+												console.log("response is: ", response);
+												setAvatarUrl(response.secure_url);
+											})
+											.catch(err => console.log('Error while uploading the file: ', err));
+									}
+
+									// https://my.ironhack.com/lms/courses/course-v1:IRONHACK+WDFT52+202108_BER/modules/ironhack-course-chapter_8/units/ironhack-course-chapter_8-sequential-vertical_2
+									// https://github.dev/Ironhack-WDFT-August-2021/react-image-upload/tree/master/server
 
 
 
@@ -144,6 +167,8 @@ export default function Signup(props) {
 							Create account
 							</button>
 						</div>
+
+						<input type="file" onChange={handleFileUpload} />
 
 
 						{message && (
