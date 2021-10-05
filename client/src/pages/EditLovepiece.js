@@ -56,6 +56,10 @@ export default function EditLovepiece(props) {
 			.catch(err => console.log(err));
 	}
 
+  const handleStillValidChange = event => {
+    setStillValid(!stillValid)
+  }
+
   const handleSubmit = e => {
 		e.preventDefault();
 		const requestBody = { 
@@ -78,59 +82,95 @@ export default function EditLovepiece(props) {
 	}
 
 
+
+
+
   return (
     <div>
-      <h3>Edit your lovepiece</h3>
-      <h4>(coords: {coords})</h4>
-      <h4>Title: {title}</h4>
-      <h4>Created on {formattedDateCreated}</h4>
-      <h4>Type: {type}</h4>
 
-      <form onSubmit={handleSubmit}>
 
-        <label htmlFor="stillValid">Is it currently active? (Yes or No): </label>
-        <input
-          type="text"
-          name="stillValid"
-          value={stillValid}
-          onChange={e => setStillValid(e.target.value)}
-        />
+      <div className="box">
+
+        <h3 className="title is-4">Edit your lovepiece</h3>
+        {/* <h4>(coords: {coords})</h4> */}
+        <h4 className="subtitle is-6">Created on {formattedDateCreated}</h4>
+        <h4><strong>Type: </strong>{type}</h4>
+        <h4><strong>Category: </strong>{category}</h4>
         <br />
 
-        <label htmlFor="description">Describe your lovepiece: </label>
-        <input
-          type="text"
-          name="description"
-          value={description}
-          onChange={e => setDescription(e.target.value)}
-        />
-        <br />
+        <form onSubmit={handleSubmit}>
 
-        <label htmlFor="category">Select the category: </label>
-				<input
-					type="text"
-					name="category"
-					value={category}
-					onChange={e => setCategory(e.target.value)}
-				/>    
-        <br />  
+          <div className="box">
 
-        <label htmlFor="tags">Add tags, separated by comma: </label>
-				<input
-					type="text"
-					name="tags"
-					value={tags}
-					onChange={e => setTags(e.target.value)}
-				/>   
-        <br />
+            <div className="field">
+              <label class="checkbox">Still active? </label>
+              <input 
+                className="ml-2"
+                type="checkbox" 
+                name="stillValid"
+                checked={stillValid}
+                onChange={handleStillValidChange}
+              />
+            </div>
+              
+            <div className="field">
+							<label className="label" htmlFor="title">Lovepiece title: </label>
+							<input
+								className="input"
+								type="text"
+								name="title"
+								value={title}
+								onChange={e => setTitle(e.target.value)}
+							/>
+						</div>
 
-        <br />
-        <button type="submit">Update this lovepiece</button>
+						<div className="field">
+							<label className="label">Description</label>
+							<div className="control">
+								<textarea 
+									className="textarea" 
+									value={description}
+									onChange={e => setDescription(e.target.value)}
+								>
+								</textarea>
+							</div>
+						</div>
 
-      </form>
+            <div className="field">
+              <label className="label" htmlFor="tags">Tags: </label>
+              <input
+                className="input"
+                type="text"
+                name="tags"
+                value={tags}
+                onChange={e => setTags(e.target.value)}
+              />   
+            </div>
 
-      <br /><br />
-      <button onClick={deleteLovepiece}>Delete this lovepiece</button>
+          </div>
+
+          <button
+            className="button is-primary"
+            type="submit"
+          >
+          Update this lovepiece
+          </button>
+
+          
+          <br /><br />
+        
+        </form>
+
+       
+          <button 
+            className="button is-danger"
+            onClick={deleteLovepiece}
+          >
+          Delete this lovepiece!
+          </button>
+          <br /><br />
+
+      </div>
 
     </div>
   )

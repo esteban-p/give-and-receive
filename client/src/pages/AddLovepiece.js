@@ -149,7 +149,8 @@ export default function AddLovepiece(props) {
 
 
 					<div className="field">
-						<div className="control">	
+						{/* <div className="control">	 */}
+						<div>	
 							<button className="button is-primary" type="submit">Add this lovepiece</button>
 						</div>
 					</div>
