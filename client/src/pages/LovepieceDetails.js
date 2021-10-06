@@ -64,7 +64,7 @@ export default function LovepieceDetails(props) {
 								<Link to={`/lovepieces/edit/${lovepiece._id}`}>
 									<button className="button is-primary">Edit this lovepiece</button>
 								</Link>
-							)}
+								)} 
 
 						</>
 					)}
@@ -74,6 +74,25 @@ export default function LovepieceDetails(props) {
 		</div>
 	);
 }
+
+
+
+
+
+
+
+// --- When trying to create a conversation with the owner of the lovepiece ---
+
+// {lovepiece.owner._id === user ? (
+// 	<Link to={`/lovepieces/edit/${lovepiece._id}`}>
+// 		<button className="button is-primary">Edit this lovepiece</button>
+// 	</Link>
+// 	) : (
+// 	<Link to={`/lovepieces/connect/${lovepiece._id}`}>
+// 		<button className="button is-info">Connect to this lovepiece</button>
+// 	</Link>
+// )}
+
 
 
 

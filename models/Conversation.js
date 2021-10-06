@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const conversationSchema = new Schema({
 
   startDate: Date,
-  lovePiece: {
+  lovepiece: {
     type: Schema.Types.ObjectId,
     ref: 'LovePiece'
   },

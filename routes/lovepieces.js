@@ -80,6 +80,7 @@ router.put('/:id', (req, res, next) => {
 });
 
 
+
 // delete a lovepiece
 router.delete('/:id', (req, res, next) => {
 	LovePiece.findByIdAndDelete(req.params.id)

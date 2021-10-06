@@ -15,6 +15,8 @@ import AddLovepiece from './pages/AddLovepiece';
 import LovepieceDetails from './pages/LovepieceDetails';
 import EditLovepiece from './pages/EditLovepiece';
 import Footer from './components/Footer';
+// import Conversation from './pages/Conversation';
+// import Connection from './pages/Connection';
 
 
 function App(props) {
@@ -58,9 +60,14 @@ function App(props) {
 
         <ProtectedRoute exact path='/lovepieces/edit/:id' user={user} component={EditLovepiece} />
 
+        {/* <ProtectedRoute exact path='/lovepieces/connect/:id' user={user} component={Connection} /> */}
+
         <ProtectedRoute exact path='/profile' user={user} component={Profile} />
 
         <ProtectedRoute exact path='/about' user={user} component={About} />
+
+        {/* <ProtectedRoute exact path='/conversation' user={user} component={Conversation} /> */}
+
 
 
       </Switch>

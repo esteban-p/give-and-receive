@@ -55,7 +55,7 @@ export default function Lovepieces(props) {
     <div>
       
       <div className="box">
-        <div className="columns is-vcentered">
+        <div className="columns">
 
           <div className="column">
             <div className="block">
@@ -108,6 +108,7 @@ export default function Lovepieces(props) {
             </div>
           </div>
           <div className="column"> 
+            <br /><br />
             <div className="box">
               <Map />
             </div>
