@@ -41,10 +41,11 @@ export default function Navbar(props) {
 
 
             <div className="navbar-brand">
-              <a className="navbar-item" >
-                {/* <img className="navbar-item" src="https://bulma.io/images/bulma-logo.png" width="112" height="28" /> */}
-                <img className="navbar-item" src="/client/public/G&R-logo.png" width="50" height="50" alt="" />
-              </a>
+              <figure class="image is-64x64">
+              {/* <a className="navbar-item" > */}
+                <img className="navbar-item" src="https://res.cloudinary.com/give-and-receive/image/upload/v1633515396/g-and-r/G_R-logo-transparent-500x500_afmgrh.png" alt="" />
+              {/* </a> */}
+              </figure>
 
               <a role="button" className="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
