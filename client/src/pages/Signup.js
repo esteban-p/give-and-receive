@@ -149,13 +149,26 @@ export default function Signup(props) {
 						</div>
 						<br />
 
-						<div className="field">
-							<button 
-								className="button is-warning is-light is-focused" 
-								onClick={uploadAvatar}
-							>
-							Upload your profile image
-							</button>
+						<div class="file has-name">
+							<label class="file-label">
+								<input class="file-input" type="file" name="resume" onChange={handleFileUpload} />
+								<span class="file-cta">
+									<span class="file-icon">
+										<i class="fas fa-upload"></i>
+									</span>
+									<span class="file-label">
+									Upload your profile image
+									</span>
+								</span>
+								<div class="file-name">
+									{avatarUrl ? (
+										<figure className="image is-32x32">
+											<img className="is-rounded" src={avatarUrl} />
+										</figure>
+										) : ('No file uploaded')
+									}
+								</div>
+							</label>
 						</div>
 						<br /><br />
 
@@ -168,7 +181,6 @@ export default function Signup(props) {
 							</button>
 						</div>
 
-						<input type="file" onChange={handleFileUpload} />
 
 
 						{message && (
@@ -189,5 +201,3 @@ export default function Signup(props) {
 }
 
 
-
-{/* <h3>{message}</h3> */}

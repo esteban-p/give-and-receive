@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+
 // here we destructure the fields from the props object
 export default function LovepieceCard(props) {
 	
@@ -13,7 +14,11 @@ export default function LovepieceCard(props) {
 				<div className="media">
 					<div className="media-left">
 						<figure className="image is-48x48">
-							<img className="is-rounded" src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+							{props.owner.avatarUrl ? (
+								<img className="is-rounded" src={props.owner.avatarUrl} alt="Opps" />
+							) : (
+								<img className="is-rounded" src={"https://bulma.io/images/placeholders/96x96.png"} alt="Opps" />
+							)}
 						</figure>
 					</div>
 					<div className="media-content">
@@ -31,7 +36,7 @@ export default function LovepieceCard(props) {
 
 
 
-
+// "https://bulma.io/images/placeholders/96x96.png"
 
 
 // --- Original card before styling with Bulma ---

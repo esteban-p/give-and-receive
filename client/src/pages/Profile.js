@@ -60,7 +60,16 @@ export default function Profile(props) {
       <div className="column is-half ml-5">
         <div className="box">
         
-            <h3 className="title is-4">Update your profile, {username}</h3>
+            <div class="columns">
+              <div class="column is-two-thirds">
+                <h3 className="title is-4">Update your profile, {username}</h3>
+              </div>
+              <div class="column is-one-third">
+                <figure class="image is-128x128">
+                  <img src={avatarUrl} />
+                </figure>
+              </div>
+            </div>
 
             <form onSubmit={handleSubmit}>
 
