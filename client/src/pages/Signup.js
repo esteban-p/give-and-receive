@@ -1,6 +1,6 @@
 import { useState } from 'react';
-// import { signup } from '../services/auth';
-import { signup, service, handleUpload } from '../services/auth';
+// import { signup, service, handleUpload } from '../services/auth';
+import { signup, handleUpload } from '../services/auth';
 import axios from 'axios';
 
 
