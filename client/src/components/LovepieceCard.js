@@ -21,7 +21,6 @@ export default function LovepieceCard(props) {
 								<figure class="image is-48x48">
 									<img class="is-rounded" src="https://res.cloudinary.com/give-and-receive/image/upload/v1633515396/g-and-r/G_R-logo-transparent-500x500_afmgrh.png" />
 								</figure>
-								{/* <img className="is-rounded" src={"https://bulma.io/images/placeholders/96x96.png"} alt="Opps" /> */}
 								</>
 							)}
 						</figure>
