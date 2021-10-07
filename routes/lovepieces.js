@@ -80,6 +80,19 @@ router.put('/:id', (req, res, next) => {
 });
 
 
+// add a message to the lovepiece board
+router.patch('/addmessage/:id', (req, res, next) => {
+	LovePiece.findByIdAndUpdate(req.params.id, {
+		$push: {board: req.body}	
+		}, { new: true })
+		.then(updatedLovepiece => {
+			res.status(200).json(updatedLovepiece);
+		})
+		.catch(err => next(err));
+})
+
+
+
 
 // delete a lovepiece
 router.delete('/:id', (req, res, next) => {

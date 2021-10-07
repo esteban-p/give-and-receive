@@ -56,39 +56,28 @@ export default function Navbar(props) {
 
             <div id="navMenu" className="navbar-menu">
               <div className="navbar-start">
-                <a className="navbar-item">
-                  <NavLink 
-                    to="/lovepieces" 
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "grey"
-                    }}
-                  >
-                  All lovepieces
-                  </NavLink>
-                </a>
-                <a className="navbar-item">
-                  <NavLink 
-                    to="/about"
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "white"
-                    }}
-                  >
-                  About G&R
-                  </NavLink>
-                </a>
+                <div className="buttons">
+                  <a className="button is-light">
+                    <Link to="/lovepieces">
+                      All lovepieces
+                    </Link>
+                  </a>
+                  <a className="button is-light">
+                    <Link to="/about">
+                      About G&R
+                    </Link>
+                  </a>
+                </div>
               </div>
-
               <div className="navbar-end">
                 <div className="navbar-item">
                   <div className="buttons">
-                    <a className="button is-light">
+                    <a className="button is-success is-light">
                       <Link to="/profile">
                         {props.user.username}
                       </Link>
                     </a>
-                    <a className="button is-light">
+                    <a className="button is-danger is-light">
                       <Link to="/" onClick={() => handleLogout()}>
                         Logout
                       </Link>

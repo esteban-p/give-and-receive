@@ -23,9 +23,20 @@ const io = socket(server, {
 io.on('connection', socket => {
   console.log('socket id: ', socket.id);
   console.log('new connection');
-  socket.on('new-message', payload => {
-    // console.log('message: ', payload)
+  socket.on('new-message', content => {
+    console.log('emittedMessage: ', content)
     // send this message to all other connected clients
-    io.emit('message', payload);
+    io.emit('emittedMessage', content);
   })
 })
+
+
+// io.on('connection', socket => {
+//   console.log('socket id: ', socket.id);
+//   console.log('new connection');
+//   socket.on('new-message', payload => {
+//     console.log('message: ', payload)
+//     // send this message to all other connected clients
+//     io.emit('message', payload);
+//   })
+// })
