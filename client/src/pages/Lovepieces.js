@@ -18,7 +18,8 @@ export default function Lovepieces(props) {
   const [tagsFilter, setTagsFilter] = useState('');
 
   const getAllLovepieces = () => {
-		axios.get(`${API_URL}/api/lovepieces`)
+		// axios.get(`${API_URL}/api/lovepieces`)
+    axios.get(`/api/lovepieces`)
 			.then(response => {
         // console.log('all the response before filters: ', response.data);
         // console.log('tagsFilter: ', tagsFilter);

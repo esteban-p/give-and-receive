@@ -42,7 +42,8 @@ export default function Profile(props) {
       avatarUrl,
       favourites
     };
-		axios.put(`${API_URL}/api/auth/${user}`, requestBody)
+    // axios.put(`${API_URL}/api/auth/${user}`, requestBody)
+    axios.put(`/api/auth/${user}`, requestBody)
 			.then(response => {
 				props.history.push('/lovepieces');
 			})

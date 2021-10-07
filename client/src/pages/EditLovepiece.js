@@ -25,7 +25,8 @@ export default function EditLovepiece(props) {
   // console.log(lovepieceId);
   
   useEffect(() => {
-		axios.get(`${API_URL}/api/lovepieces/${lovepieceId}`)
+    // axios.get(`${API_URL}/api/lovepieces/${lovepieceId}`)
+    axios.get(`/api/lovepieces/${lovepieceId}`)
 			.then(response => {
 				console.log('use effect: ', response.data);
 				setUser(response.data.user);
@@ -49,7 +50,8 @@ export default function EditLovepiece(props) {
 	}, [])
 
   const deleteLovepiece = () => {
-		axios.delete(`${API_URL}/api/lovepieces/${lovepieceId}`)
+		// axios.delete(`${API_URL}/api/lovepieces/${lovepieceId}`)
+    axios.delete(`/api/lovepieces/${lovepieceId}`)
 			.then(() => {
 				props.history.push('/lovepieces');
 			})
@@ -74,7 +76,8 @@ export default function EditLovepiece(props) {
       subCategory,
       tags
     };
-		axios.put(`${API_URL}/api/lovepieces/${lovepieceId}`, requestBody)
+		// axios.put(`${API_URL}/api/lovepieces/${lovepieceId}`, requestBody)
+    axios.put(`/api/lovepieces/${lovepieceId}`, requestBody)
 			.then(response => {
 				props.history.push(`/lovepieces/${lovepieceId}`);
 			})

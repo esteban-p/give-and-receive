@@ -21,7 +21,8 @@ export default function LovepieceDetails(props) {
   // console.log('lovepieceDetails user: ', user)
 
 	const getLovepiece = () => {
-		axios.get(`${API_URL}/api/lovepieces/${lovepieceId}`)
+		// axios.get(`${API_URL}/api/lovepieces/${lovepieceId}`)
+		axios.get(`/api/lovepieces/${lovepieceId}`)
 			.then(response => {
 				// console.log(response.data);
 				setLovepiece(response.data);
@@ -55,7 +56,8 @@ export default function LovepieceDetails(props) {
 	const handleSubmit = e => {
 		e.preventDefault();
 		const requestBody = {payload};
-		axios.patch(`${API_URL}/api/lovepieces/addmessage/${lovepieceId}`, requestBody)
+		// axios.patch(`${API_URL}/api/lovepieces/addmessage/${lovepieceId}`, requestBody)
+		axios.patch(`/api/lovepieces/addmessage/${lovepieceId}`, requestBody)
 			.then(response => {
 				setMessage('')
 				//<<<<<<<< To emit to socket <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
