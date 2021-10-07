@@ -44,12 +44,12 @@ export default function LovepieceDetails(props) {
 		setPayload(messageToPost);
 	}, [message])
 
-	//<<<<<<< To recieve from socket <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	//<<<<<<< To receieve from socket <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   useEffect(() => {
     socket.on('emittedMessage', content => {
       setSocketMessage(content.emittedMessage);
     })
-  }, [socketMessage])
+  }, [])
 	//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 	const handleSubmit = e => {
