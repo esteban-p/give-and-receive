@@ -18,7 +18,7 @@ export default function Lovepieces(props) {
   const [tagsFilter, setTagsFilter] = useState('');
 
   const getAllLovepieces = () => {
-		// axios.get(`${API_URL}/api/lovepieces`)
+		
     axios.get(`/api/lovepieces`)
 			.then(response => {
         // console.log('all the response before filters: ', response.data);
@@ -131,52 +131,3 @@ export default function Lovepieces(props) {
 
 
 
-
-
-// --- WORKS OK: getAllLovepieces before any filters ---
-  // const getAllLovepieces = () => {
-	// 	axios.get(`${API_URL}/api/lovepieces`)
-	// 		.then(response => {
-	// 			// console.log(response.data);
-	// 			setLovepieces(response.data);
-	// 		})
-	// 		.catch(err => console.log(err));
-	// }
-
-
-// --- WORKS OK: getAllLovepieces with the type filter ---
-  // const getAllLovepieces = () => {
-	// 	axios.get(`${API_URL}/api/lovepieces`)
-	// 		.then(response => {
-	// 			console.log('all response.data: ', response.data);
-	// 			setLovepieces(
-  //         response.data.filter(lovepiece => {
-  //           if (searchType === 'offer') return lovepiece.type === 'offer';
-  //           if (searchType === 'need') return lovepiece.type === 'need';
-  //           else return lovepiece
-  //         })
-  //       );
-	// 		})
-	// 		.catch(err => console.log(err));
-	// }
-
-
-// --- WORKS OK: getAllLovepieces with the type and category filters ---
-  // const getAllLovepieces = () => {
-	// 	axios.get(`${API_URL}/api/lovepieces`)
-	// 		.then(response => {
-	// 			setLovepieces(response.data
-  //         .filter(lovepiece => {
-  //           if (searchFilter === 'offer') return lovepiece.type === 'offer';
-  //           else if (searchFilter === 'need') return lovepiece.type === 'need';
-  //           else return lovepiece;
-  //         })
-  //         .filter(lovepiece => {
-  //           if (categoryFilter === 'time') return lovepiece.category === 'time';
-  //           else if (categoryFilter === 'stuff') return lovepiece.category === 'stuff';
-  //           else return lovepiece;
-  //         })
-  //       );
-	// 		})
-	// 		.catch(err => console.log(err));
-	// }

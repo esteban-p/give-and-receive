@@ -42,7 +42,7 @@ export default function AddLovepiece(props) {
     };
 
 
-		// axios.post(`${API_URL}/api/lovepieces/add`, requestBody)
+		
 		axios.post(`/api/lovepieces/add`, requestBody)
 			.then(response => {
 				// reset the state and thereby reset the form
