@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MessageCard from '../components/MessageCard';
 
-import socketIOClient from 'socket.io-client';
-const socket = socketIOClient('http://localhost:5005');
+// import socketIOClient from 'socket.io-client';
+// const socket = socketIOClient('http://localhost:5005');
 
 export default function LovepieceDetails(props) {
 	
@@ -46,11 +46,11 @@ export default function LovepieceDetails(props) {
 	}, [message])
 
 	//<<<<<<< To receieve from socket <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-  useEffect(() => {
-    socket.on('emittedMessage', content => {
-      setSocketMessage(content.emittedMessage);
-    })
-  }, [])
+  // useEffect(() => {
+  //   socket.on('emittedMessage', content => {
+  //     setSocketMessage(content.emittedMessage);
+  //   })
+  // }, [])
 	//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 	const handleSubmit = e => {
@@ -61,10 +61,10 @@ export default function LovepieceDetails(props) {
 			.then(response => {
 				setMessage('')
 				//<<<<<<<< To emit to socket <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-				setSocketMessage(socketMessage + payload)
-				socket.emit('new-message', { 
-					emittedMessage: socketMessage
-				})
+				// setSocketMessage(socketMessage + payload)
+				// socket.emit('new-message', { 
+				// 	emittedMessage: socketMessage
+				// })
 				//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 				// props.history.push(`/lovepieces/${lovepieceId}`)
 			})
